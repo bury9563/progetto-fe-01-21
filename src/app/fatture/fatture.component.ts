@@ -50,7 +50,7 @@ export class FattureComponent implements OnInit {
           console.log(response);
         },
         error => console.error(error),
-        () => window.location.reload()
+        () => this.getFatture()
       );
     } else {
       console.log("Operazione annullata")

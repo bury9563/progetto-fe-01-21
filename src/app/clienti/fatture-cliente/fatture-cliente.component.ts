@@ -45,7 +45,6 @@ export class FattureClienteComponent implements OnInit {
     .subscribe(
       response => {
         this.fatture = response;
-        console.log(this.fatture)
         this.page = this.fatture.pageable.pageNumber + 1;
         console.log("yyyyy " + this.id)
       },
@@ -69,7 +68,7 @@ export class FattureClienteComponent implements OnInit {
           console.log(response);
         },
         error => console.error(error),
-        () => window.location.reload()
+        () => this.getFatture()
       );
     } else {
       console.log("Operazione annullata")

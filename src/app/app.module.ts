@@ -53,7 +53,7 @@ import { HomeComponent } from './home/home.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: 
       MyHttpInterceptor, multi: true },
-      AuthGuard,{ provide: LOCALE_ID, useValue: 'it'}
+      AuthGuard,{ provide: LOCALE_ID, useValue: 'en'}
   ],
   bootstrap: [AppComponent]
 })
