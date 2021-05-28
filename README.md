@@ -1,6 +1,6 @@
 # Progetto di Burato Federico
 
-<a href="https://epicodeschool.it/fe-01-21/studente-23/progetto/11/distr/" target="blank">Sito</a>
+<a href="https://epicodeschool.it/fe-01-21/studente-23/progetto/11/distr/" target="_blank">Sito</a>
 
 # EpicodeFiner
 
