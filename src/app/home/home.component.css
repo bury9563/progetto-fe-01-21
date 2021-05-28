@@ -1,0 +1,15 @@
+#box {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top:none ;
+    padding: 15rem;
+}
+
+.link {
+    text-decoration: underline;
+}
+
+.link:hover {
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+}

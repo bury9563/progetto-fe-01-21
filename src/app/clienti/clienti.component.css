@@ -1,0 +1,35 @@
+table {
+    width: 70vw;
+    border: rgba(0, 0, 0, 0.1) 1px solid;
+    border-top: none;
+}
+
+th {
+    border-top: none;
+}
+
+.rimuovi, .fatture, .modifica, .nuovo{
+    background-color: rgba(255, 0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: rgb(0, 0, 0) 1px solid;
+    width: 80px;
+    border-top: none;
+    border-bottom: none;
+    text-decoration: underline;
+}
+
+.fatture {
+    color:rgb(30, 188, 209) ;
+}
+
+.modifica {
+    color: rgba(255, 157, 0, 1);
+}
+
+.rimuovi {
+    color: rgb(236, 45, 45);
+}
+
+.nuovo {
+    color: rgb(20, 194, 49);
+}

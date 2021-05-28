@@ -1,0 +1,17 @@
+#box {
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-top: none;
+    padding: 30px;
+}
+
+#box>#form>div:first-of-type{
+    border-top: rgba(0, 0, 0, 0.3) 1px solid;
+    padding-top: 20px;
+}
+
+#box>div>div:nth-of-type(2){
+    border-bottom: rgba(0, 0, 0, 0.3) 1px solid;
+    padding-top: 20px;
+    padding-bottom: 30px ;
+}
+

@@ -1,0 +1,48 @@
+<ng-container *ngIf="fatture">
+  <div class="container">
+      <div class="row justify-content-center">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><button class="indietro" (click)="back()">Indietro</button></th>
+              <th><h2 class="text-primary">Fatture del cliente {{fatture.content[id].cliente.ragioneSociale}}</h2></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th><button class="nuovo" routerLink="/clienti/fattureCliente/nuova-fattura-cliente/{{id}}">Nuova Fattura</button></th>      
+            </tr>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Data</th>
+              <th scope="col">Numero</th>
+              <th scope="col">Anno</th>
+              <th scope="col">Importo</th>
+              <th scope="col">Stato</th>
+              <th scope="col">Cliente</th>
+              <th></th>
+              <th></th>      
+            </tr>
+          </thead>
+        <tbody>
+        <tr *ngFor="let f of fatture.content">
+          <td>{{ f.id }}</td>
+            <td>{{f.data }}</td>
+              <td>{{ f.numero }}</td>
+              <td>{{ f.anno }}</td>
+              <td>{{ f.importo }}</td>
+              <td>{{ f.stato.nome }}</td>
+              <td>{{ f.cliente.ragioneSociale }}</td>
+              <td><button class="modifica" routerLink="/clienti/fattureCliente/modifica-fattura-cliente/{{f.id}}">Modifica</button></td>
+              <td><button class="rimuovi" (click)="elimina(f.id)">Elimina</button></td>
+            </tr> 
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <div class="row justify-content-center">
+    <ngb-pagination [(page)]="page" (pageChange)="pageChange($event)" [collectionSize]="fatture.totalElements / 2" [maxSize]="fatture.size" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+  </div>
+</ng-container>

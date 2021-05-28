@@ -1,0 +1,104 @@
+<ng-container *ngIf="cliente">
+    <div class="container" id="box">
+        <div class="row justify-content-end mt-5 mb-5 ">
+            <div class="mr-5 btn-group">
+                <button class="btn btn-warning" (click)="putEdit()" style="color: white;">Modifica</button>
+                <button class="btn btn-secondary" (click)="back()">Indietro</button>                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h1>Cliente</h1><hr>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="ragSoc" class="form-label">Ragione Sociale</label>
+                            <input [(ngModel)]="ragSoc" type="text" class="form-control" id="ragSoc">
+                        
+                            <label for="iva" class="form-label">Partita Iva</label>
+                            <input [(ngModel)]="iva" type="text" class="form-control" id="iva">
+            
+                            <label for="fatturato" class="form-label">Fatturato</label>
+                            <input [(ngModel)]="fatturato" type="text" class="form-control" id="fatturato">
+                        
+                            <label for="tipoCliente" class="form-label mt-3">Tipo Cliente (Attuale: <b>{{tipoCliente}}</b>)</label><br>
+                            <select id="tipoCliente" class="form-select form-select-lg mb-3">
+                                <option selected>Seleziona tipologia cliente</option>
+                                <option value="SPA">SPA</option>
+                                <option value="SRL">SRL</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input [(ngModel)]="email" type="text" class="form-control" id="email">
+                        
+                            <label for="pec" class="form-label">PEC</label>
+                            <input [(ngModel)]="pec" type="text" class="form-control" id="pec">
+                        
+                            <label for="telefono" class="form-label">Telefono</label>
+                            <input [(ngModel)]="telefono" type="string" class="form-control" id="telefono">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h1>Contatto</h1>
+                <hr>
+                <label for="nome" class="form-label">Nome</label>
+                <input [(ngModel)]="nome" type="text" class="form-control" id="nome">
+            
+                <label for="cognome" class="form-label">Cognome</label>
+                <input [(ngModel)]="cognome" type="text" class="form-control" id="cognome">
+            
+                <label for="telefonoContatto" class="form-label">Telefono Contatto</label>
+                <input [(ngModel)]="telefonoContatto" type="string" class="form-control" id="telefonoContatto" placeholder="+00 345 67 89 0123">
+            
+                <label for="emailContatto" class="form-label">Email Contatto</label>
+                <input [(ngModel)]="emailContatto" type="text" class="form-control" id="emailContatto">
+            </div>
+        </div>
+    
+        <div class="row mt-5">
+            <div class="col-6 sede">
+                <h1 (click)="opsCollapse.toggle()" [attr.aria-expanded]="!OpsIsCollapsed" aria-controls="collapseExample">Indirizzo sede operativa</h1>
+                <hr>
+            
+                <div #opsCollapse="ngbCollapse" [(ngbCollapse)]="OpsIsCollapsed">
+                    <label for="viaSede" class="form-label">Via</label>
+                    <input [(ngModel)]="viaSede" type="text" class="form-control" id="viaSede">
+                
+                    <label for="civicoSede" class="form-label">Civico</label>
+                    <input [(ngModel)]="civicoSede" type="text" class="form-control" id="civicoSede">
+                
+                    <label for="cap" class="form-label">CAP</label>
+                    <input [(ngModel)]="cap" type="text" class="form-control" id="cap">
+                
+                    <label for="localita" class="form-label">Localit&agrave;</label>
+                    <input [(ngModel)]="localita" type="text" class="form-control" id="localita" >
+                </div>
+            </div>
+    
+            
+    
+            <div class="col-6 sede">
+                <h1 (click)="legaleCollapse.toggle()" [attr.aria-expanded]="!legaleIsCollapsed" aria-controls="collapseExample">Indirizzo sede legale</h1>
+                <hr>
+            
+                <div #legaleCollapse="ngbCollapse" [(ngbCollapse)]="legaleIsCollapsed">
+                    <label for="viaSedeLegale" class="form-label">Via</label>
+                    <input [(ngModel)]="viaSedeLegale" type="text" class="form-control" id="viaSedeLegale">
+                
+                    <label for="civicoSedeLegale" class="form-label">Civico</label>
+                    <input [(ngModel)]="civicoSedeLegale" type="text" class="form-control" id="civicoSedeLegale">
+                
+                    <label for="capSedeLegale" class="form-label">CAP</label>
+                    <input [(ngModel)]="capSedeLegale" type="text" class="form-control" id="capSedeLegale">
+                
+                    <label for="localitaSedeLegale" class="form-label">Localit&agrave;</label>
+                    <input [(ngModel)]="localitaSedeLegale" type="text" class="form-control" id="localitaSedeLegale">
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+

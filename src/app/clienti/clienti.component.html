@@ -1,0 +1,42 @@
+<ng-container *ngIf="clienti">
+    <div class="container" id="box">
+        <div class="row justify-content-center">
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th><h1 class="ml-3 text-primary">Lista Clienti</h1></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th><button class="nuovo" routerLink="nuovo">Nuovo Cliente</button></th>
+                </tr>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ragione Sociale</th>
+                <th scope="col">Email</th>
+                <th scope="col">Partita Iva</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let c of clienti.content">
+                <td>{{ c.id }}</td>
+                <td>{{c.ragioneSociale }}</td>
+                <td>{{ c.email }}</td>
+                <td>{{ c.partitaIva }}</td>
+                <td><button class="fatture" routerLink="fattureCliente/{{c.id}}">Fatture</button></td>
+                <td><button class="modifica" routerLink="modifica/{{c.id}}">Modifica</button></td>
+                <td><button class="rimuovi" (click)="elimina(c.id)">Rimuovi</button></td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+          <div class="row justify-content-center">
+            <ngb-pagination [(page)]="page" (pageChange)="pageChange($event)" [collectionSize]="clienti.totalElements / 2" [maxSize]="clienti.size" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+          </div>
+    </div>
+</ng-container>

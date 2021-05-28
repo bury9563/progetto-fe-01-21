@@ -1,0 +1,106 @@
+<div class="container" id="box">
+    <div class="row">
+        <div class="col-6">
+            <h1>Cliente</h1>
+            <hr>
+    
+            <label for="ragSoc" class="form-label">Ragione Sociale</label>
+            <input [(ngModel)]="ragSoc" type="text" class="form-control" id="ragSoc" placeholder="Mario-Rossi SPA">
+        
+            <label for="iva" class="form-label">Partita Iva</label>
+            <input [(ngModel)]="iva" type="text" class="form-control" id="iva" placeholder="1253918724"> <br>
+        
+            <select (change)="setTipoCliente($event.target.value)" class="form-select form-select-lg mb-3">
+                <option selected>Tipo Cliente</option>
+                <option value="SPA">SPA</option>
+                <option value="SRL">SRL</option>
+            </select> <br>
+        
+            <label for="email" class="form-label">Email</label>
+            <input [(ngModel)]="email" type="text" class="form-control" id="email" placeholder="mario@gmail.com">
+        
+            <label for="pec" class="form-label">PEC</label>
+            <input [(ngModel)]="pec" type="text" class="form-control" id="pec" placeholder="Mario.Rossi@gmail.com">
+        
+            <label for="telefono" class="form-label">Telefono</label>
+            <input [(ngModel)]="telefono" type="text" class="form-control" id="telefono" placeholder="+00 345 67 89 0123">
+    
+            <label for="fatturato" class="form-label">Fatturato Annuale</label>
+            <input [(ngModel)]="fatturato" type="text" class="form-control" id="fatturato">
+        </div>
+    
+        <div class="col-6">
+            <h1>Contatto</h1>
+            <hr>
+            <label for="nome" class="form-label">Nome</label>
+            <input [(ngModel)]="nome" type="text" class="form-control" id="nome">
+        
+            <label for="cognome" class="form-label">Cognome</label>
+            <input [(ngModel)]="cognome" type="text" class="form-control" id="cognome">
+        
+            <label for="telefonoContatto" class="form-label">Telefono Contatto</label>
+            <input [(ngModel)]="telefonoContatto" type="text" class="form-control" id="telefonoContatto" placeholder="+00 345 67 89 0123">
+        
+            <label for="emailContatto" class="form-label">Email Contatto</label>
+            <input [(ngModel)]="emailContatto" type="text" class="form-control" id="emailContatto">
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-6">
+            <h1>Indirizzo sede operativa</h1>
+            <hr>
+        
+            <label for="viaSede" class="form-label">Via</label>
+            <input [(ngModel)]="viaSede" type="text" class="form-control" id="viaSede">
+        
+            <label for="civicoSede" class="form-label">Civico</label>
+            <input [(ngModel)]="civicoSede" type="text" class="form-control" id="civicoSede">
+        
+            <label for="cap" class="form-label">CAP</label>
+            <input [(ngModel)]="cap" type="text" class="form-control" id="cap">
+        
+            <label for="localita" class="form-label">Localit&agrave;</label>
+            <input [(ngModel)]="localita" type="text" class="form-control" id="localita" ><br>
+        
+            <select (change)="setComuneOperativo($event.target.value)" class="form-select form-select-lg mb-3">
+                <option selected>Comune</option>
+                <option value="1">LASTRA A SIGNA</option>
+                <option value="2">SCANDICCI</option>
+                <option value="3">PALESTRINA</option>
+            </select> <br>
+            
+        </div>
+        <div class="col-6">
+            <h1>Indirizzo sede legale</h1>
+            <hr>
+        
+            <label for="viaSedeLegale" class="form-label">Via</label>
+            <input [(ngModel)]="viaSedeLegale" type="text" class="form-control" id="viaSedeLegale">
+        
+            <label for="civicoSedeLegale" class="form-label">Civico</label>
+            <input [(ngModel)]="civicoSedeLegale" type="text" class="form-control" id="civicoSedeLegale">
+        
+            <label for="capSedeLegale" class="form-label">CAP</label>
+            <input [(ngModel)]="capSedeLegale" type="text" class="form-control" id="capSedeLegale">
+        
+            <label for="localitaSedeLegale" class="form-label">Localit&agrave;</label>
+            <input [(ngModel)]="localitaSedeLegale" type="text" class="form-control" id="localitaSedeLegale">
+            
+            <br>
+
+            <select (change)="setComuneLegale($event.target.value)" class="form-select form-select-lg mb-3">
+                <option selected>Comune</option>
+                <option value="1">LASTRA A SIGNA</option>
+                <option value="2">SCANDICCI</option>
+                <option value="3">PALESTRINA</option>
+            </select>
+        </div>
+    </div>
+    <div class="row justify-content-end mr-5 mt-5 mb-5">
+        <div class="btn-group">
+            <button class="btn btn-success" (click)="creaCliente()">Crea</button>
+            <button class="btn btn-secondary" (click)="back()">Indietro</button>
+        </div>
+    </div>
+</div>

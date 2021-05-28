@@ -1,0 +1,40 @@
+<ng-container *ngIf="day">
+    <div class="container" id="box">
+        <h1 id="mod">Modifica Fattura</h1>
+        <hr>
+
+        <div class="row">
+          <div class="col-6">
+            <label for="date">Data Fattura (Attuale: {{year}}-{{month}}-{{day}})</label><br>
+            <ngb-datepicker #dp id="date" [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+          </div>
+          
+          <div class="col-6">
+            <label for="numero" class="form-label">Numero</label>
+            <input [(ngModel)]="numero" type="text" class="form-control" id="numero">
+                
+            <label for="anno" class="form-label">Anno</label>
+            <input [(ngModel)]="anno" type="text" class="form-control" id="anno">
+                
+            <label for="importo" class="form-label">Importo</label>
+            <input [(ngModel)]="importo" type="text" class="form-control" id="importo"><br>
+        
+            <select (change)="setStatoFattura($event.target.value)" class="form-select">
+                <option selected>Scegli Stato</option>
+                <option value="1">PAGATA</option>
+                <option value="2">NON PAGATA</option>
+            </select>
+            <span>
+              Attuale: <b>{{nomeStatoFattura}}</b>
+            </span>
+          </div>
+        </div>
+
+        <div class="row justify-content-end">
+          <div class="btn-group mr-5">
+            <button style="color: white;" class="btn btn-warning" (click)="putFattura()">Modifica</button>
+            <button class="btn btn-secondary" (click)="back()">Indietro</button>
+          </div>
+        </div>
+    </div>
+</ng-container>
