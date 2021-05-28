@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'clienti/fattureCliente/nuova-fattura-cliente/:id', component: NuovaFatturaClienteComponent },
   { path: 'clienti/fattureCliente/modifica-fattura-cliente/:id', component: ModificaFatturaClienteComponent },
   { path: '', component: HomeComponent },
+  { path: '**', component: HomeComponent },
 ];
 
 @NgModule({
